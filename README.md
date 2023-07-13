@@ -20,5 +20,5 @@ Number of logical CPUs is 4
 Load average in the past 1, 5, and 15 minutes: 1.14, 1.31, 1.14
 Total RAM: 16390360 KB
 Free RAM: 3620288 KB
-Used RAM: 7778856 KB
+Used RAM: 7778856 KBr
 ```

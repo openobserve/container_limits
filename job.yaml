@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: containerlimits
-        image: public.ecr.aws/zinclabs/container_limits:latest
+        image: public.ecr.aws/zinclabs/container_limits:6cc99e1
         resources:
           limits:
             cpu: "2"

@@ -29,10 +29,10 @@ fn main() {
         Err(error) => panic!("Unexpected error: {}", error),
     }
 
-    match fs::read_to_string("/sys/fs/cgroup/cpu/cpu.shares") {
-        Ok(cpu_shares) => println!("CPU Shares: {}", cpu_shares),
+    match fs::read_to_string("/sys/fs/cgroup/cpu/cpu.cfs_quota_us") {
+        Ok(cfs_quota_us) => println!("CPU Shares: {}", cfs_quota_us),
         Err(ref error) if error.kind() == ErrorKind::NotFound => {
-            println!("CPU shares file not found, possibly not running in a container")
+            println!("CPU quota file not found, possibly not running in a container")
         }
         Err(error) => panic!("Unexpected error: {}", error),
     }

@@ -11,6 +11,6 @@ RUN cargo install --path .
 
 RUN cargo build --release
 
-COPY target/release/container_limits /container_limits
+COPY /app/target/release/container_limits /container_limits
 
 CMD ["/container_limits"]

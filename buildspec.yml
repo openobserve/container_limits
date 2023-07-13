@@ -8,9 +8,10 @@ phases:
   build:
     commands:
       - GIT_HASH="$(git rev-parse --short=7 HEAD)"
-      - docker pull public.ecr.aws/zinclabs/rust:bullseye-sccache
       - docker build -t container_limits .
       - docker tag container_limits:latest public.ecr.aws/zinclabs/container_limits:latest
       - docker tag container_limits:latest public.ecr.aws/zinclabs/container_limits:$GIT_HASH
       - docker push public.ecr.aws/zinclabs/container_limits:latest
+      - docker push public.ecr.aws/zinclabs/container_limits:$GIT_HASH
+      
       

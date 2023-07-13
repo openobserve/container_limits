@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/zinclabs
+
+  build:
+    commands:
+      - docker pull public.ecr.aws/zinclabs/rust:bullseye-sccache
+      - docker build -t container_limits .
+      - docker tag container_limits:latest public.ecr.aws/zinclabs/container_limits:latest
+      - docker push public.ecr.aws/zinclabs/container_limits:latest
+      

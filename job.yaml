@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: containerlimits
+  namespace: default
+spec:
+  ttlSecondsAfterFinished: 100
+  
+  template:
+    spec:
+      containers:
+      - name: containerlimits
+        image: public.ecr.aws/zinclabs/container_limits:latest
+        resources:
+          limits:
+            cpu: "2"
+            memory: "2Gi"
+          requests:
+            cpu: "1"
+            memory: "1Gi"
+      restartPolicy: Never
+      nodeSelector:
+        kubernetes.io/hostname: gke-alpha-1-default-172688e3-07cz

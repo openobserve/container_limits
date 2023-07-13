@@ -6,6 +6,8 @@ FROM public.ecr.aws/docker/library/rust:1.70.0-buster
 # WORKDIR /app
 
 COPY . .
+RUN pwd
+RUN ls -la
 
 RUN cargo install --path .
 

@@ -47,6 +47,8 @@ requests:
   memory: "1Gi"
 
 ```
+
+```
  ------CPU and memory details from host 
 
 Number of logical CPUs is 4

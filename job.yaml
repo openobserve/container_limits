@@ -10,11 +10,11 @@ spec:
     spec:
       containers:
       - name: containerlimits
-        image: public.ecr.aws/zinclabs/container_limits:c25ad15
+        image: public.ecr.aws/zinclabs/container_limits:f441e90
         resources:
           limits:
-            cpu: "2"
-            memory: "2Gi"
+            cpu: "2.5"
+            memory: "2.5Gi"
           requests:
             cpu: "1"
             memory: "1Gi"

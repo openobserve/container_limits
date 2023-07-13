@@ -3,6 +3,8 @@ use std::fs;
 use std::io::ErrorKind;
 
 fn main() {
+     println!("\n ------CPU and memory details from host \n");
+
     let cpu_num = sys_info::cpu_num().unwrap();
     println!("Number of logical CPUs is {}", cpu_num);
 
@@ -14,7 +16,7 @@ fn main() {
     println!("Free RAM: {} KB", mem_info.free);
     println!("Used RAM: {} KB", mem_info.total - mem_info.avail);
 
-    println!("Use control groups v2");
+    println!("\n ------ CPU and memory details from container using control groups v2 \n");
 
     match fs::read_to_string("/sys/fs/cgroup/cpu.weight") {
         Ok(cpu_weight) => println!("CPU Weight: {}", cpu_weight),

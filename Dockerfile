@@ -19,6 +19,6 @@ RUN ls -alh /app/target
 RUN ls -alh /app/target/release
 
 
-COPY /app/target/release/container_limits /container_limits
+RUN cp /app/target/release/container_limits /container_limits
 
 CMD ["/container_limits"]

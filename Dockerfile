@@ -14,7 +14,9 @@ RUN cargo install --path .
 RUN cargo build --release
 
 RUN pwd
-RUN ls -la
+RUN ls -alh
+RUN ls -alh /app/target
+RUN ls -alh /app/target/release
 
 
 COPY /app/target/release/container_limits /container_limits

@@ -8,12 +8,14 @@ WORKDIR /app
 COPY . /app
 
 COPY . .
-RUN pwd
-RUN ls -la
 
 RUN cargo install --path .
 
 RUN cargo build --release
+
+RUN pwd
+RUN ls -la
+
 
 COPY /app/target/release/container_limits /container_limits
 
